@@ -1,0 +1,60 @@
+<h2>Merci de remplir le fromulaire avant la vente de la carte</h2>
+
+<div class="d-block">
+     <form [formGroup]="vendeur"> 
+        <div class="row">
+        <div class="col-sm">
+            <label for="cp"> Cp vendeur : </label>
+            <input formControlName="cp" type="text">
+        </div>
+        <div class="col-sm">
+            <label for="nomVendeur"> Nom du vendeur : </label>
+            <input formControlName="nomVendeur" type="text">
+        </div>
+    </div>
+     </form>
+
+    <form [formGroup]="creationCarte">
+    <div class="row">    
+        <div class="col-sm form-control-container">
+            <label for="nom"> Nom du client : </label>
+            <input formControlName="nom" type="text">
+        </div>
+        
+        <div class="col-sm form-control-container">
+            <label for="prenom"> Prénom du client : </label>
+            <input formControlName="prenom" type="text">
+        </div>
+        <div class="col-sm form-control-container">
+            <label for="birthday"> Date de naissance : </label>
+            <input formControlName="birthday" type="date">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm form-control-container">
+            <label for="mail"> E-mail : </label>
+            <input formControlName="mail" type="email">
+        </div>
+        <div class="col-sm form-control-container">
+            <label for="telephone"> N° de téléphone : </label>
+            <input formControlName="telephone" type="number">
+        </div>
+        <div class="col-sm form-control-container">
+            <label for="adresse"> Adresse : </label>
+            <input formControlName="adresse" type="text">
+        </div>
+    </div>
+    <div class="row">
+        <div div class="col-sm form-control-container">
+            <label for="debutValidite"> Début de validité : </label>
+            <input formControlName="debutValidite" type="date">
+        </div>
+        <div div class="col-sm form-control-container">
+            <label for="finValidite"> Fin de validité : </label>
+            <input formControlName="finValidite" type="date">
+        </div>
+    </div>
+        <button class="btn btn-primary" (click)="creerCarte()">Créer la carte</button>
+    </form>
+    
+</div>
