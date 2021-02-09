@@ -1,57 +1,50 @@
-<h2>Merci de remplir le fromulaire avant la vente de la carte</h2>
+<h2 class="text-center">Merci de remplir le formulaire avant la vente de la carte</h2>
 
-<div class="d-block">
+<div class>
      <form [formGroup]="vendeur"> 
-        <div class="row">
-        <div class="col-sm">
-            <label for="cp"> Cp vendeur : </label>
-            <input formControlName="cp" type="text">
+        <div class="form-row input-group mb-3">
+        <div class="col-md-4 mb-5 input-group-prepend">
+            <input formControlName="cp" type="text" placeholder="Cp vendeur">
         </div>
-        <div class="col-sm">
-            <label for="nomVendeur"> Nom du vendeur : </label>
-            <input formControlName="nomVendeur" type="text">
+        <div class="col-md-4 mb-5">
+            <input formControlName="nomVendeur" type="text" placeholder="Nom du vendeur">
         </div>
     </div>
      </form>
 
     <form [formGroup]="creationCarte">
-    <div class="row">    
-        <div class="col-sm form-control-container">
-            <label for="nom"> Nom du client : </label>
-            <input formControlName="nom" type="text">
+    <div class="form-row">    
+        <div class="col-md-4 mb-5">
+            <input formControlName="nom" type="text" placeholder="Nom du client">
         </div>
         
-        <div class="col-sm form-control-container">
-            <label for="prenom"> Prénom du client : </label>
-            <input formControlName="prenom" type="text">
+        <div class="col-md-4 mb-5">
+            <input formControlName="prenom" type="text" placeholder="Prénom du client">
         </div>
-        <div class="col-sm form-control-container">
-            <label for="birthday"> Date de naissance : </label>
-            <input formControlName="birthday" type="date">
+        <div class="col-md-4 mb-5">
+            <input formControlName="birthday" type="date" placeholder="Date de naissance">
         </div>
     </div>
     <div class="row">
-        <div class="col-sm form-control-container">
-            <label for="mail"> E-mail : </label>
-            <input formControlName="mail" type="email">
+        <div class="col-md-4 mb-5 input-group">
+            <div class="input-group-append">
+                <span class="input-group-text">@</span>
+            </div>            
+            <input formControlName="mail" type="email" placeholder="e-mail">
         </div>
-        <div class="col-sm form-control-container">
-            <label for="telephone"> N° de téléphone : </label>
-            <input formControlName="telephone" type="number">
+        <div class="col-md-4 mb-5">
+            <input formControlName="telephone" type="number" placeholder="N° de téléphone">
         </div>
-        <div class="col-sm form-control-container">
-            <label for="adresse"> Adresse : </label>
-            <input formControlName="adresse" type="text">
+        <div class="col-md-4 mb-5">
+            <input formControlName="adresse" type="text" placeholder="adresse">
         </div>
     </div>
     <div class="row">
-        <div div class="col-sm form-control-container">
-            <label for="debutValidite"> Début de validité : </label>
-            <input formControlName="debutValidite" type="date">
+        <div div class="col-md-4 mb-5">
+            <input formControlName="debutValidite" type="date" placeholder="Début de validité">
         </div>
-        <div div class="col-sm form-control-container">
-            <label for="finValidite"> Fin de validité : </label>
-            <input formControlName="finValidite" type="date">
+        <div div class="col-md-4 mb-5">
+            <input formControlName="finValidite" type="date" placeholder="Fin de validité">
         </div>
     </div>
         <button class="btn btn-primary" (click)="creerCarte()">Créer la carte</button>
