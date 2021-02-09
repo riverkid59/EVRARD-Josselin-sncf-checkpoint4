@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@sncf/bootstrap-sncf.metier/dist/bootstrap-sncf.min.css",
+              "node_modules/@sncf/bootstrap-sncf.communication/dist/bootstrap-sncf.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@sncf/bootstrap-sncf.metier/dist/bootstrap-sncf.min.js",
+              "node_modules/@sncf/bootstrap-sncf.communication/dist/bootstrap-sncf.min.js"
+            ]
           },
           "configurations": {
             "production": {
