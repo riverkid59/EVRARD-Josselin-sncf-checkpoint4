@@ -13,14 +13,17 @@
         </div>
       </form>
   
-      <form [formGroup]="modifierCarte">
+      <form [formGroup]="carteForm">
         <div class="form-row">
-          <div class="col-md-4 mb-5" >
-            <input [(ngModel)]="carte.nom" formControlName="nom" type="text" placeholder="Nom du client">
+            <div>
+              <input formControlName="id" type="text" placeholder="id" hidden>
+            </div>
+          <div class="col-md-4 mb-5">
+            <input formControlName="nom" type="text" placeholder="Nom du client">
           </div>
   
           <div class="col-md-4 mb-5">
-            <input [(ngModel)]="carte.prenom" formControlName="prenom" type="text" placeholder="Prénom du client">
+            <input formControlName="prenom" type="text" placeholder="Prénom du client">
           </div>
           <div class="col-md-4 mb-5">
             <input formControlName="birthday" type="date" placeholder="Date de naissance">
@@ -49,7 +52,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-around align-items-center p-2">
-        <button class="btn btn-primary " (click)="modifCarte()">Créer la carte</button>
+        <button class="btn btn-warning " (click)="modifCarte()">Modifier la carte</button>
       </div>
       </form>
   

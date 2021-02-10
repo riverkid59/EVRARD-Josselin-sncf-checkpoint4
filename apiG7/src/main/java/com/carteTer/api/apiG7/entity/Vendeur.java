@@ -13,14 +13,14 @@ public class Vendeur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private int cp;
+	private String cp;
 	private String nom;
 	
 	public Vendeur() { 
 		
 	}
 
-	public Vendeur(int cp, String nom) {
+	public Vendeur(String cp, String nom) {
 		this.cp = cp;
 		this.nom = nom;
 	}
@@ -33,11 +33,11 @@ public class Vendeur {
 		this.id = id;
 	}
 
-	public int getCp() {
+	public String getCp() {
 		return cp;
 	}
 
-	public void setCp(int cp) {
+	public void setCp(String cp) {
 		this.cp = cp;
 	}
 

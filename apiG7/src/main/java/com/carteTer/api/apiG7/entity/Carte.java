@@ -1,6 +1,6 @@
 package com.carteTer.api.apiG7.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,24 +17,34 @@ public class Carte {
 	private Long id;
 	private String nom;
 	private String prenom;
-	private Date birthday;
+	private LocalDate birthday;
 	private String mail;
 	private int telephone;
-	private Date debutValidite;
-	private Date finValidite;
+	private String adresse;
+	private LocalDate debutValidite;
+	private LocalDate finValidite;
 	
 	public Carte() {
 		
 	}
 
-	public Carte(String nom, String prenom, Date birthday, String mail, int telephone, Date debutValidite, Date finValidite) {
+	public Carte(String nom, String prenom, LocalDate birthday, String mail, int telephone, String adresse, LocalDate debutValidite, LocalDate finValidite) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.birthday = birthday;
 		this.mail = mail;
 		this.telephone = telephone;
+		this.adresse = adresse;
 		this.debutValidite = debutValidite;
 		this.finValidite = finValidite;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 
 	public Long getId() {
@@ -61,11 +71,11 @@ public class Carte {
 		this.prenom = prenom;
 	}
 
-	public Date getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
 
@@ -85,19 +95,20 @@ public class Carte {
 		this.telephone = telephone;
 	}
 
-	public Date getDebutValidite() {
+	public LocalDate getDebutValidite() {
 		return debutValidite;
 	}
 
-	public void setDebutValidite(Date debutValidite) {
+	public void setDebutValidite(LocalDate debutValidite) {
 		this.debutValidite = debutValidite;
 	}
 
-	public Date getFinValidite() {
+	public LocalDate getFinValidite() {
 		return finValidite;
 	}
 
-	public void setFinValidite(Date finValidite) {
+	public void setFinValidite(LocalDate finValidite) {
 		this.finValidite = finValidite;
 	}
+
 }

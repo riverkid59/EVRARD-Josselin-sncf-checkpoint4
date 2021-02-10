@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Carte } from '../models/carte';
+import { Vendeur } from '../models/vendeur';
 import { CarteService } from '../services/carte.service';
 
 @Component({
@@ -10,18 +12,37 @@ import { CarteService } from '../services/carte.service';
 })
 export class ListeCarteComponent implements OnInit {
 
-  constructor(private carteService: CarteService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private carteService: CarteService) { }
 
-  cartes : Observable<Carte[]>
+  id: number;
+  cartes : Observable<Carte[]>;
   carte : Carte = new Carte();
 
-  carteList: any;
+  carteList: Carte[];
+  
+
+  vendeurs : Observable<Vendeur[]>
+  vendeur : Vendeur = new Vendeur();
+
+  vendeurList: any;
 
   ngOnInit(): void {
+    this.refreshCarteList();
+   }
 
-  this.carteService.getCarteList("cartes").subscribe((data) => {
-    console.log(data);
-    this.carteList = data;
-  });
+  supprimerCarte(id): void {
+    this.carteService.deleteCarteByID(id).subscribe(() => {
+    this.refreshCarteList();},
+    error => {
+      console.log(error);
+    });
+  }
+
+  refreshCarteList() {
+    this.carteService.getCarteList("cartes").subscribe((data) => {
+      console.log(data);
+      this.carteList = data;
+    });
+
   }
 }

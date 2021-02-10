@@ -28,5 +28,4 @@ public class VendeurService {
         return vendeurRepository.findById(id).get();
     }
 
-
 }

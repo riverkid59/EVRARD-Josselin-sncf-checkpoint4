@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'vendre' , component: FormulaireCarteComponent
   },
   {
-    path: 'modifier' , component: ModifCarteComponent
+    path: 'modifier/:id' , component: ModifCarteComponent
   },
   {
     path: 'liste' , component: ListeCarteComponent

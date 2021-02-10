@@ -2,13 +2,13 @@ package com.carteTer.api.apiG7.dto;
 
 public class VendeurDto {
 	
-	private int cp;
+	private String cp;
 	private String nom;
 	
-	public int getCp() {
+	public String getCp() {
 		return cp;
 	}
-	public void setCp(int cp) {
+	public void setCp(String cp) {
 		this.cp = cp;
 	}
 	public String getNom() {

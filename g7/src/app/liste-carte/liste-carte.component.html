@@ -4,24 +4,26 @@
   <div class="col-sm-4 p-3" *ngFor="let carte of carteList">
     <div class="card border bg-pink text-white" style="width: 18rem;">
       <div class="card-header bg-transparent">
-        <p class="card-text">{{carte.id}}</p>
+        <p class="card-text"> Carte N° {{carte.id}}</p><p>Vendu par : {{vendeur.nom}}</p>
       </div>
       <div class="card-body bg-purple text-white">
-        <p class="card-text" *ngIf="carte.nom != 0"> Nom : {{carte.nom}}</p>
-        <p class="card-text" *ngIf="carte.prenom != 0">Prénom : {{carte.prenom}}</p>
-        <p class="card-text" *ngIf="carte.birthday != 0"> Date de naissance : <br>
+        <p class="card-text" *ngIf="carte.nom"> Nom : {{carte.nom}}</p>
+        <p class="card-text" *ngIf="carte.prenom">Prénom : {{carte.prenom}}</p>
+        <p class="card-text" *ngIf="carte.birthday"> Date de naissance : <br>
           {{carte.birthday}}</p>
-        <p class="card-text" *ngIf="carte.mail != 0"> E-mail : {{carte.mail}}</p>
-        <p class="card-text" *ngIf="carte.telephone != 0"> Tél : {{carte.telephone}}</p>
-        <p class="card-text" *ngIf="carte.adresse != 0"> Adresse : <br>
+        <p class="card-text" *ngIf="carte.mail"> E-mail : {{carte.mail}}</p>
+        <p class="card-text" *ngIf="carte.telephone"> Tél : {{carte.telephone}}</p>
+        <p class="card-text" *ngIf="carte.adresse"> Adresse : <br>
           {{carte.adresse}}
         </p>
-        <p class="card-text" *ngIf="carte.debutValidite != 0"> Début de validité : <br>
+        <p class="card-text" *ngIf="carte.debutValidite"> Début de validité : <br>
           {{carte.debutValidite}}
         </p>
-        <p class="card-text" *ngIf="carte.FinValidite != 0"> Fin de validité : <br>
+        <p class="card-text" *ngIf="carte.finValidite"> Fin de validité : <br>
           {{carte.finValidite}}
         </p>
+        <button class="btn btn-primary" routerLink ="../modifier/{{ carte.id }}" type="submit">Modifier</button>
+        <button class="btn btn-danger" (click)= "supprimerCarte(carte.id)">Supprimer</button>
       </div>
     </div>
   </div>

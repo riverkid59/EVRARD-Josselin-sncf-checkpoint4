@@ -1,16 +1,23 @@
 package com.carteTer.api.apiG7.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class CarteDto {
 	
 	private String nom;
 	private String prenom;
-	private Date birthday;
+	private LocalDate birthday;
 	private String mail;
 	private int telephone;
-	private Date debutValidite;
-	private Date finValidite;
+	private String adresse;
+	public String getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+	private LocalDate debutValidite;
+	private LocalDate finValidite;
 	
 
 	public String getNom() {
@@ -25,10 +32,10 @@ public class CarteDto {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public Date getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(Date birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
 	public String getMail() {
@@ -43,16 +50,16 @@ public class CarteDto {
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
-	public Date getDebutValidite() {
+	public LocalDate getDebutValidite() {
 		return debutValidite;
 	}
-	public void setDebutValidite(Date debutValidite) {
+	public void setDebutValidite(LocalDate debutValidite) {
 		this.debutValidite = debutValidite;
 	}
-	public Date getFinValidite() {
+	public LocalDate getFinValidite() {
 		return finValidite;
 	}
-	public void setFinValidite(Date finValidite) {
+	public void setFinValidite(LocalDate finValidite) {
 		this.finValidite = finValidite;
 	}
 	
