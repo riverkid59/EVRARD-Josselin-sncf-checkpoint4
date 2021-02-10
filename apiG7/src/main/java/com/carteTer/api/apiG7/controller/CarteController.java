@@ -2,8 +2,11 @@ package com.carteTer.api.apiG7.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.carteTer.api.apiG7.dto.CarteDto;
 import com.carteTer.api.apiG7.entity.Carte;
+import com.carteTer.api.apiG7.repository.CarteRepository;
 import com.carteTer.api.apiG7.services.CarteService;
+
+
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
@@ -25,6 +32,9 @@ public class CarteController {
 
 	@Autowired
 	CarteService carteService;
+	
+	@Autowired
+	CarteRepository carteRepository;
 	
 	@GetMapping
 	public List<Carte> findAll(){
@@ -45,9 +55,11 @@ public class CarteController {
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public void update(@PathVariable("id") Long id, @RequestBody Carte carte) {
-		 carteService.update(id, carte);
+	public ResponseEntity<Carte> update(@PathVariable("id") long id, @RequestBody CarteDto dto) {
+			Carte carteToUpdate = carteService.updateCarte(id, dto);
+			return ResponseEntity.ok().body(carteToUpdate);	
 	}
+	
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.OK)

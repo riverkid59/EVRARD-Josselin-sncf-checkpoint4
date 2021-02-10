@@ -1,16 +1,17 @@
 package com.carteTer.api.apiG7.services;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-
+import com.carteTer.api.apiG7.dto.CarteDto;
 import com.carteTer.api.apiG7.entity.Carte;
 import com.carteTer.api.apiG7.mapper.CarteMapper;
 import com.carteTer.api.apiG7.repository.CarteRepository;
+
 
 
 
@@ -36,16 +37,12 @@ public class CarteService {
 		return carteRepository.save(carte);
 	}
 	
-	public Optional<Carte> getCarteById(long id) {
-		return carteRepository.findById(id);
-	}
 	
-	public boolean checkExistedCarte(long id) {
-		if(carteRepository.existsById((long) id)) {
-			return true;
-		}
-		return false;
-	}	
+	public Carte updateCarte(Long id, CarteDto dto) {
+		Carte carteToUpdate = carteRepository.findById(id).orElse(null);
+		carteToUpdate = carteMapper.updateCarteFromDto(carteToUpdate, dto);
+		return carteRepository.save(carteToUpdate);
+	}
 	
 	public Carte updateCarte(Carte carte) {
 		return carteRepository.save(carte);		
