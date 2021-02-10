@@ -1,53 +1,57 @@
-<h2 class="text-center">Merci de remplir le formulaire avant la vente de la carte</h2>
+<div class="p-3 mb-2 bg-cyan text">
+  <h2 class="text-center text-white">Merci de remplir le formulaire avant la vente de la carte</h2><br><br>
 
-<div class>
-     <form [formGroup]="vendeur"> 
-        <div class="form-row input-group mb-3">
-        <div class="col-md-4 mb-5 input-group-prepend">
-            <input formControlName="cp" type="text" placeholder="Cp vendeur">
+  <div class="bg-teal justify-content-around align-items-center p-2">
+    <form [formGroup]="vendeur">
+      <div class="form-row">
+        <div class="col-md-4 mb-5">
+          <input formControlName="cp" type="text" placeholder="Cp vendeur">
         </div>
         <div class="col-md-4 mb-5">
-            <input formControlName="nomVendeur" type="text" placeholder="Nom du vendeur">
+          <input formControlName="nomVendeur" type="text" placeholder="Nom du vendeur">
         </div>
-    </div>
-     </form>
+      </div>
+    </form>
 
     <form [formGroup]="creationCarte">
-    <div class="form-row">    
+      <div class="form-row">
         <div class="col-md-4 mb-5">
-            <input formControlName="nom" type="text" placeholder="Nom du client">
+          <input formControlName="nom" type="text" placeholder="Nom du client">
         </div>
-        
+
         <div class="col-md-4 mb-5">
-            <input formControlName="prenom" type="text" placeholder="Prénom du client">
+          <input formControlName="prenom" type="text" placeholder="Prénom du client">
         </div>
         <div class="col-md-4 mb-5">
-            <input formControlName="birthday" type="date" placeholder="Date de naissance">
+          <input formControlName="birthday" type="date" placeholder="Date de naissance">
         </div>
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
         <div class="col-md-4 mb-5 input-group">
-            <div class="input-group-append">
-                <span class="input-group-text">@</span>
-            </div>            
-            <input formControlName="mail" type="email" placeholder="e-mail">
+          <div class="input-group-append">
+            <span class="input-group-text">@</span>
+          </div>
+          <input formControlName="mail" type="email" placeholder="e-mail">
         </div>
         <div class="col-md-4 mb-5">
-            <input formControlName="telephone" type="number" placeholder="N° de téléphone">
+          <input formControlName="telephone" type="number" placeholder="N° de téléphone">
         </div>
         <div class="col-md-4 mb-5">
-            <input formControlName="adresse" type="text" placeholder="adresse">
+          <input formControlName="adresse" type="text" placeholder="adresse">
         </div>
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
         <div div class="col-md-4 mb-5">
-            <input formControlName="debutValidite" type="date" placeholder="Début de validité">
+          <input formControlName="debutValidite" type="date" placeholder="Début de validité">
         </div>
         <div div class="col-md-4 mb-5">
-            <input formControlName="finValidite" type="date" placeholder="Fin de validité">
+          <input formControlName="finValidite" type="date" placeholder="Fin de validité">
         </div>
+      </div>
+      <div class="d-flex justify-content-around align-items-center p-2">
+      <button class="btn btn-primary " (click)="creerCarte()">Créer la carte</button>
     </div>
-        <button class="btn btn-primary" (click)="creerCarte()">Créer la carte</button>
     </form>
-    
+
+  </div>
 </div>

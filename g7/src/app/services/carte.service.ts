@@ -17,7 +17,6 @@ export class CarteService {
 
   cartes : any = [];
 
-
   constructor(private http: HttpClient) { }
 
 
@@ -29,12 +28,23 @@ public ajouterCarte(data) {
 public getCarteList(road : string): Observable<Carte[]> {
   const myUrl : string = this.url;
   return this.http.get<Carte[]>(myUrl + 'cartes');
-  
 }
+
+public getCarteByID(id : string): Observable<Carte[]> {
+  const myUrl : string = this.url + "cartes/" + id;
+  return this.http.get<Carte[]>(myUrl);
+}
+
 
 public getVendeurs(road : string): Observable<any> {
   const myUrl : string = this.url + road;
   return this.http.get(myUrl);
+}
+
+public modifCarte(data) {
+  const myUrl : string = this.url;
+  const options = {headers: {'Content-Type': 'application/json'}}
+  return this.http.put(myUrl + "cartes/", data, options);
 }
 
 }
